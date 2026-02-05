@@ -2,9 +2,8 @@
 
 ## Build outputs and licenses
 
-The release artifacts on the GitHub release page
-(`https://github.com/moritzfl/xsltproc-win-compile/releases`) are licensed as
-follows:
+The release artifacts on the GitHub [release page](https://github.com/moritzfl/xsltproc-win-compile/releases)
+are licensed as follows:
 
 | Artifact         | License (components)                   | Source                                 |
 |------------------|----------------------------------------|----------------------------------------|
