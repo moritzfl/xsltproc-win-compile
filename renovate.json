@@ -1,0 +1,14 @@
+{
+  "extends": ["config:base"],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["^Dockerfile$"],
+      "matchStrings": ["ARG LIBXSLT_VERSION=(?<currentValue>\\S+)"],
+      "datasourceTemplate": "gitlab-tags",
+      "depNameTemplate": "GNOME/libxslt",
+      "registryUrlTemplate": "https://gitlab.gnome.org",
+      "versioningTemplate": "semver"
+    }
+  ]
+}
