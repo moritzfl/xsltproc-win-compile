@@ -1,7 +1,7 @@
 FROM ubuntu:24.04 AS build
 
 ARG HOST=x86_64-w64-mingw32
-ARG PREFIX=/opt/${HOST}
+ARG OUTPUT_PREFIX=/opt/${HOST}
 # Latest version sources:
 # zlib: https://zlib.net/
 # libiconv: https://ftp.gnu.org/gnu/libiconv/
@@ -37,14 +37,14 @@ RUN set -eux; \
   curl -fsSL "https://zlib.net/zlib-${ZLIB_VERSION}.tar.gz" | tar -xz; \
   cd "zlib-${ZLIB_VERSION}"; \
   CC="${HOST}-gcc" AR="${HOST}-ar" RANLIB="${HOST}-ranlib" \
-    ./configure --static --prefix="${PREFIX}"; \
+    ./configure --static --prefix="${OUTPUT_PREFIX}"; \
   make -j"$(nproc)"; \
   make install
 
 RUN set -eux; \
   curl -fsSL "https://ftp.gnu.org/gnu/libiconv/libiconv-${LIBICONV_VERSION}.tar.gz" | tar -xz; \
   cd "libiconv-${LIBICONV_VERSION}"; \
-  ./configure --host="${HOST}" --prefix="${PREFIX}" --enable-static --disable-shared; \
+  ./configure --host="${HOST}" --prefix="${OUTPUT_PREFIX}" --enable-static --disable-shared; \
   make -j"$(nproc)"; \
   make install
 
@@ -57,9 +57,9 @@ RUN set -eux; \
   LDFLAGS="-static" \
   ./configure \
     --host="${HOST}" \
-    --prefix="${PREFIX}" \
-    --with-zlib="${PREFIX}" \
-    --with-iconv="${PREFIX}" \
+    --prefix="${OUTPUT_PREFIX}" \
+    --with-zlib="${OUTPUT_PREFIX}" \
+    --with-iconv="${OUTPUT_PREFIX}" \
     --without-python \
     --disable-shared \
     --enable-static; \
@@ -75,8 +75,8 @@ RUN set -eux; \
   LDFLAGS="-static" \
   ./configure \
     --host="${HOST}" \
-    --prefix="${PREFIX}" \
-    --with-libxml-prefix="${PREFIX}" \
+    --prefix="${OUTPUT_PREFIX}" \
+    --with-libxml-prefix="${OUTPUT_PREFIX}" \
     --without-python \
     --disable-shared \
     --enable-static; \
@@ -85,7 +85,7 @@ RUN set -eux; \
 
 RUN set -eux; \
   mkdir -p /out; \
-  cp -a "${PREFIX}/bin/." /out/
+  cp -a "${OUTPUT_PREFIX}/bin/." /out/
 
 FROM scratch AS artifacts
 COPY --from=build /out/ /

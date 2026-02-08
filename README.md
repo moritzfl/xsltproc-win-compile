@@ -10,11 +10,10 @@ Build and export the artifacts to `./out`:
 
 ```bash
 docker build -t xsltproc-win \
-  --build-arg LIBXSLT_VERSION=1.1.45 \
   --output type=local,dest=./out .
 ```
 
-The resulting binaries (from `${PREFIX}/bin`) will be at:
+The resulting binaries (from `${OUTPUT_PREFIX}/bin`) will be at:
 
 ```text
 ./out/xsltproc.exe
@@ -22,19 +21,23 @@ The resulting binaries (from `${PREFIX}/bin`) will be at:
 
 ## Build arguments
 
-- `HOST` (default `x86_64-w64-mingw32`) - target Windows architecture (64-bit x86).
-  - Example 32-bit: `HOST=i686-w64-mingw32`
-- `LIBXSLT_VERSION` - libxslt version to build (defines `xsltproc` version).
-- `LIBXML2_VERSION`, `LIBICONV_VERSION`, `ZLIB_VERSION` - dependency versions.
+| ARG                | Default              | Description                                                                                                           |
+|--------------------|----------------------|-----------------------------------------------------------------------------------------------------------------------|
+| `HOST`             | `x86_64-w64-mingw32` | Target Windows architecture (use `i686-w64-mingw32` for 32-bit).                                                      |
+| `OUTPUT_PREFIX`    | `/opt/${HOST}`       | Install/output prefix inside the build container.                                                                     |
+| `ZLIB_VERSION`     | `1.3.1`              | zlib version to build.                                                                                                |
+| `LIBICONV_VERSION` | `1.18`               | libiconv version to build.                                                                                            |
+| `LIBXML2_VERSION`  | `2.15.1`             | libxml2 version to build.                                                                                             |
+| `LIBXSLT_VERSION`  | `1.1.45`             | libxslt version to build (defines `xsltproc` version).                                                                |
 
 ## Windows test script
 
 A batch test script is included to validate the Windows executable.
-Copy `./out/xsltproc.exe`, `test-xsltproc.bat`, and `tests/windows/` to a Windows machine,
-then run:
+Copy the `test/`-directory onto a Windows machine and place the `xsltproc.exe` binary you compiled into that folder.
+On the Windows machine you can then run the following script within the `test/` directory:
 
 ```bat
-test-xsltproc.bat .\xsltproc.exe
+test-xsltproc.bat
 ```
 
 ## Notes

@@ -5,7 +5,7 @@ set "SCRIPT_DIR=%~dp0"
 set "EXE_PATH=%~1"
 if "%EXE_PATH%"=="" set "EXE_PATH=%SCRIPT_DIR%xsltproc.exe"
 
-set "TEST_DIR=%SCRIPT_DIR%tests\windows"
+set "TEST_DIR=%SCRIPT_DIR%resources"
 set "OUT_DIR=%TEMP%\xsltproc-test-%RANDOM%"
 set "RC=0"
 
