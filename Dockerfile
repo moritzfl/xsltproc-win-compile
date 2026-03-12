@@ -7,7 +7,7 @@ ARG OUTPUT_PREFIX=/opt/${HOST}
 # libiconv: https://ftp.gnu.org/gnu/libiconv/
 # libxml2: https://download.gnome.org/sources/libxml2/
 # libxslt: https://download.gnome.org/sources/libxslt/
-ARG ZLIB_VERSION=1.3.1
+ARG ZLIB_VERSION=1.3.2
 ARG LIBICONV_VERSION=1.18
 ARG LIBXML2_VERSION=2.15.1
 ARG LIBXSLT_VERSION=1.1.45
