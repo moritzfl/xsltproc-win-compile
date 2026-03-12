@@ -20,10 +20,12 @@
     {
       "customType": "regex",
       "managerFilePatterns": [
-        "/^Dockerfile$/"
+        "/^Dockerfile$/",
+        "/^README\\.md$/"
       ],
       "matchStrings": [
-        "ARG ZLIB_VERSION=(?<currentValue>\\S+)"
+        "ARG ZLIB_VERSION=(?<currentValue>\\S+)",
+        "\\|\\s*`ZLIB_VERSION`\\s*\\|\\s*`(?<currentValue>[^`]+)`\\s*\\|"
       ],
       "datasourceTemplate": "github-tags",
       "depNameTemplate": "madler/zlib",
@@ -32,10 +34,12 @@
     {
       "customType": "regex",
       "managerFilePatterns": [
-        "/^Dockerfile$/"
+        "/^Dockerfile$/",
+        "/^README\\.md$/"
       ],
       "matchStrings": [
-        "ARG LIBICONV_VERSION=(?<currentValue>\\S+)"
+        "ARG LIBICONV_VERSION=(?<currentValue>\\S+)",
+        "\\|\\s*`LIBICONV_VERSION`\\s*\\|\\s*`(?<currentValue>[^`]+)`\\s*\\|"
       ],
       "datasourceTemplate": "custom.gnu-libiconv",
       "depNameTemplate": "libiconv",
@@ -44,10 +48,12 @@
     {
       "customType": "regex",
       "managerFilePatterns": [
-        "/^Dockerfile$/"
+        "/^Dockerfile$/",
+        "/^README\\.md$/"
       ],
       "matchStrings": [
-        "ARG LIBXML2_VERSION=(?<currentValue>\\S+)"
+        "ARG LIBXML2_VERSION=(?<currentValue>\\S+)",
+        "\\|\\s*`LIBXML2_VERSION`\\s*\\|\\s*`(?<currentValue>[^`]+)`\\s*\\|"
       ],
       "datasourceTemplate": "gitlab-tags",
       "depNameTemplate": "GNOME/libxml2",
@@ -57,10 +63,12 @@
     {
       "customType": "regex",
       "managerFilePatterns": [
-        "/^Dockerfile$/"
+        "/^Dockerfile$/",
+        "/^README\\.md$/"
       ],
       "matchStrings": [
-        "ARG LIBXSLT_VERSION=(?<currentValue>\\S+)"
+        "ARG LIBXSLT_VERSION=(?<currentValue>\\S+)",
+        "\\|\\s*`LIBXSLT_VERSION`\\s*\\|\\s*`(?<currentValue>[^`]+)`\\s*\\|"
       ],
       "datasourceTemplate": "gitlab-tags",
       "depNameTemplate": "GNOME/libxslt",
