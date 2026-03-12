@@ -43,7 +43,7 @@
       ],
       "datasourceTemplate": "custom.gnu-libiconv",
       "depNameTemplate": "libiconv",
-      "versioningTemplate": "semver"
+      "versioningTemplate": "semver-coerced"
     },
     {
       "customType": "regex",
