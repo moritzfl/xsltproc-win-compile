@@ -1,26 +1,40 @@
 {
-  "extends": ["config:base"],
+  "extends": [
+    "config:recommended"
+  ],
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["^Dockerfile$"],
-      "matchStrings": ["ARG ZLIB_VERSION=(?<currentValue>\\S+)"],
+      "managerFilePatterns": [
+        "/^Dockerfile$/"
+      ],
+      "matchStrings": [
+        "ARG ZLIB_VERSION=(?<currentValue>\\S+)"
+      ],
       "datasourceTemplate": "github-tags",
       "depNameTemplate": "madler/zlib",
       "versioningTemplate": "semver"
     },
     {
       "customType": "regex",
-      "fileMatch": ["^Dockerfile$"],
-      "matchStrings": ["ARG LIBICONV_VERSION=(?<currentValue>\\S+)"],
+      "managerFilePatterns": [
+        "/^Dockerfile$/"
+      ],
+      "matchStrings": [
+        "ARG LIBICONV_VERSION=(?<currentValue>\\S+)"
+      ],
       "datasourceTemplate": "github-tags",
       "depNameTemplate": "gnu-mirror/libiconv",
       "versioningTemplate": "semver"
     },
     {
       "customType": "regex",
-      "fileMatch": ["^Dockerfile$"],
-      "matchStrings": ["ARG LIBXML2_VERSION=(?<currentValue>\\S+)"],
+      "managerFilePatterns": [
+        "/^Dockerfile$/"
+      ],
+      "matchStrings": [
+        "ARG LIBXML2_VERSION=(?<currentValue>\\S+)"
+      ],
       "datasourceTemplate": "gitlab-tags",
       "depNameTemplate": "GNOME/libxml2",
       "registryUrlTemplate": "https://gitlab.gnome.org",
@@ -28,8 +42,12 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["^Dockerfile$"],
-      "matchStrings": ["ARG LIBXSLT_VERSION=(?<currentValue>\\S+)"],
+      "managerFilePatterns": [
+        "/^Dockerfile$/"
+      ],
+      "matchStrings": [
+        "ARG LIBXSLT_VERSION=(?<currentValue>\\S+)"
+      ],
       "datasourceTemplate": "gitlab-tags",
       "depNameTemplate": "GNOME/libxslt",
       "registryUrlTemplate": "https://gitlab.gnome.org",
