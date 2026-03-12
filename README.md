@@ -25,9 +25,9 @@ The resulting binaries (from `${OUTPUT_PREFIX}/bin`) will be at:
 |--------------------|----------------------|-----------------------------------------------------------------------------------------------------------------------|
 | `HOST`             | `x86_64-w64-mingw32` | Target Windows architecture (use `i686-w64-mingw32` for 32-bit).                                                      |
 | `OUTPUT_PREFIX`    | `/opt/${HOST}`       | Install/output prefix inside the build container.                                                                     |
-| `ZLIB_VERSION`     | `1.3.1`              | zlib version to build.                                                                                                |
-| `LIBICONV_VERSION` | `1.18`               | libiconv version to build.                                                                                            |
-| `LIBXML2_VERSION`  | `2.15.1`             | libxml2 version to build.                                                                                             |
+| `ZLIB_VERSION`     | `1.3.2`              | zlib version to build.                                                                                                |
+| `LIBICONV_VERSION` | `1.19`               | libiconv version to build.                                                                                            |
+| `LIBXML2_VERSION`  | `2.15.2`             | libxml2 version to build.                                                                                             |
 | `LIBXSLT_VERSION`  | `1.1.45`             | libxslt version to build (defines `xsltproc` version).                                                                |
 
 ## Windows test script

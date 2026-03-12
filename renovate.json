@@ -2,6 +2,20 @@
   "extends": [
     "config:recommended"
   ],
+  "customDatasources": {
+    "gnu-libiconv": {
+      "defaultRegistryUrlTemplate": "https://ftp.gnu.org/gnu/libiconv/",
+      "format": "html"
+    }
+  },
+  "packageRules": [
+    {
+      "matchDatasources": [
+        "custom.gnu-libiconv"
+      ],
+      "extractVersion": "^libiconv-(?<version>\\d+\\.\\d+(?:\\.\\d+)?)\\.tar\\.gz$"
+    }
+  ],
   "customManagers": [
     {
       "customType": "regex",
@@ -23,8 +37,8 @@
       "matchStrings": [
         "ARG LIBICONV_VERSION=(?<currentValue>\\S+)"
       ],
-      "datasourceTemplate": "github-tags",
-      "depNameTemplate": "gnu-mirror/libiconv",
+      "datasourceTemplate": "custom.gnu-libiconv",
+      "depNameTemplate": "libiconv",
       "versioningTemplate": "semver"
     },
     {
