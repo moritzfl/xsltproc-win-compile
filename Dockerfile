@@ -1,4 +1,4 @@
-FROM ubuntu:24.04 AS build
+FROM ubuntu:26.04 AS build
 
 ARG HOST=x86_64-w64-mingw32
 ARG OUTPUT_PREFIX=/opt/${HOST}
