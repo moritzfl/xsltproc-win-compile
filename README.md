@@ -27,7 +27,7 @@ The resulting binaries (from `${OUTPUT_PREFIX}/bin`) will be at:
 | `OUTPUT_PREFIX`    | `/opt/${HOST}`       | Install/output prefix inside the build container.                                                                     |
 | `ZLIB_VERSION`     | `1.3.2`              | zlib version to build.                                                                                                |
 | `LIBICONV_VERSION` | `1.19`               | libiconv version to build.                                                                                            |
-| `LIBXML2_VERSION`  | `2.15.3`             | libxml2 version to build.                                                                                             |
+| `LIBXML2_VERSION`  | `2.15.4`             | libxml2 version to build.                                                                                             |
 | `LIBXSLT_VERSION`  | `1.1.45`             | libxslt version to build (defines `xsltproc` version).                                                                |
 
 ## Windows test script
