@@ -8,7 +8,7 @@ ARG OUTPUT_PREFIX=/opt/${HOST}
 # libxml2: https://download.gnome.org/sources/libxml2/
 # libxslt: https://download.gnome.org/sources/libxslt/
 ARG ZLIB_VERSION=1.3.2
-ARG LIBICONV_VERSION=1.19
+ARG LIBICONV_VERSION=1.19.1
 ARG LIBXML2_VERSION=2.15.4
 ARG LIBXSLT_VERSION=1.1.45
 
